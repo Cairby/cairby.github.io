@@ -252,6 +252,7 @@ body {
   height: 100%;
   padding: 100px; 
   overflow: auto; 
+  text-align: center;
 }
 
 .about-page-text h2 {
