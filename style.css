@@ -36,6 +36,9 @@ body {
   overflow-y: scroll; /* Enable vertical scrolling */
   font-family: 'Montserrat', sans-serif;
   cursor: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 
@@ -492,6 +495,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 50px;
+  width: 80%;
+  height: auto;
 }
 
 #about {
@@ -612,8 +617,13 @@ a, button, input[type=submit], [onclick] {
 /* menu adjustments for mobile */
 @media (max-width: 600px) {
   .menu {
-    width: 200px;
-  }
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+}
   .menu ul li a {
     font-size: 1.2rem;
   }
@@ -658,5 +668,22 @@ a, button, input[type=submit], [onclick] {
 @media (max-width: 600px) {
   .dot, .circle {
     display: none;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row; 
+}
+
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-img-wrapper svg {
+    width: 100%; /* the image will resize to the width of its container on smaller screens */
   }
 }
