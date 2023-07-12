@@ -13,6 +13,11 @@ let shapes = [];
 let mouseX = 0;
 let mouseY = 0;
 
+// Detect if the device might be a mobile based on viewport size
+const isMobile = window.innerWidth <= 480 && window.innerHeight <= 820;
+const sizeModifier = isMobile ? 0.5 : 1; // make shapes half size if mobile
+const countModifier = isMobile ? 0.5 : 1; // create half as many shapes if mobile
+
 // Function to create a random shape
 function createRandomShape() {
   const x = Math.random() * canvas.width;
@@ -35,6 +40,9 @@ function createRandomShape() {
     radius = Math.random() * 70 + 15;
   }
 
+  // Apply size modifier
+  radius *= sizeModifier;
+
   const dx = (Math.random() - 0.5) * 2.5;
   const dy = (Math.random() - 0.5) * 2.5;
   const color = getRandomColor();
@@ -43,9 +51,6 @@ function createRandomShape() {
 
   return { x, y, type, radius, dx, dy, color, angularVelocity, angle };
 }
-
-
-
 
 // Function to generate a random color excluding black
 function getRandomColor() {
@@ -60,7 +65,6 @@ function getRandomColor() {
 
   return color;
 }
-
 // Function to draw a shape
 function drawShape(shape) {
   context.beginPath();
