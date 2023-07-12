@@ -568,3 +568,94 @@ a, button, input[type=submit], [onclick] {
     bottom: 0; /* or adjust this value as per your requirements */
   }
 }
+@media (max-width: 600px) {
+  .hero-text, .about-page-text, .contact-section, .projects-section {
+    text-align: center;
+  }
+}
+/* global styles will remain the same */
+/* ... */
+
+/* site-name adjustments for mobile */
+@media (max-width: 600px) {
+  .site-name {
+    font-size: 30px;
+  }
+}
+
+/* body adjustments for mobile */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* hero section adjustments for mobile */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 60px;
+  }
+  .hero-text p {
+    font-size: 20px;
+  }
+}
+
+/* menu toggle label adjustments for mobile */
+@media (max-width: 600px) {
+  .menu-toggle-label {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+/* menu adjustments for mobile */
+@media (max-width: 600px) {
+  .menu {
+    width: 200px;
+  }
+  .menu ul li a {
+    font-size: 1.2rem;
+  }
+}
+
+/* contact page adjustments for mobile */
+@media (max-width: 600px) {
+  .contact-form {
+    margin-left: 20px;
+  }
+  .contact-content p {
+    font-size: 16px;
+  }
+}
+
+/* project section adjustments for mobile */
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* about page text adjustments for mobile */
+@media (max-width: 600px) {
+  .about-page-text {
+    font-size: 18px;
+    padding: 50px;
+  }
+  .about-page-text h2 {
+    font-size: 60px;
+  }
+}
+
+/* footer section adjustments for mobile */
+@media (max-width: 600px) {
+  .footer-section {
+    padding: 10px 0;
+  }
+}
+
+/* dot and circle adjustments for mobile */
+@media (max-width: 600px) {
+  .dot, .circle {
+    display: none;
+  }
+}
