@@ -39,6 +39,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  position: relative;
+  overflow-x: hidden;
 }
 
 
@@ -164,6 +166,7 @@ body {
   z-index: 1001; /* Lower than .menu-toggle-label */
   width: 300px;
   transition: right .2s ease-out; 
+  
 }
 
 .menu ul {
@@ -199,17 +202,10 @@ body {
   right: 0; /* Visible when checkbox is checked */
   z-index: 1003; /* Higher than .menu-toggle-label when the menu is opened */
 }
-@media (max-width: 600px) {
-  /* On mobile, the menu is hidden initially */
-  .menu {
-    right: -300px; /* Hide the menu off the right side of the screen */
-  }
+
   
-  /* On mobile, the menu is visible when the checkbox is checked */
-  .menu-toggle-label input[type="checkbox"]:checked ~ .menu {
-    right: 0; /* Show the menu */
-  }
-}
+ 
+
 
 .menu-toggle-label input[type="checkbox"]:checked ~ label {
   z-index: 1004; /* Place the menu above the slide-out menu when it is opened */
@@ -633,6 +629,7 @@ a, button, input[type=submit], [onclick] {
     left: 0;
     width: 100%;
     height: 300px;
+    right: -300px;
 }
   .menu ul li a {
     font-size: 1.2rem;
@@ -697,3 +694,9 @@ a, button, input[type=submit], [onclick] {
     width: 100%; /* the image will resize to the width of its container on smaller screens */
   }
 }
+
+  /* On mobile, the menu is visible when the checkbox is checked */
+  .menu-toggle-label input[type="checkbox"]:checked ~ .menu {
+    right: 0; /* Show the menu */
+  }
+ 
