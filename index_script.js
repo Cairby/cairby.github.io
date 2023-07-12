@@ -377,3 +377,36 @@ if (window.matchMedia("(max-width: 600px)").matches) {
   console.log('This is not a mobile device');
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    const menu = document.querySelector('.menu');
+    const menuToggle = document.querySelector('.menu-toggle-label input[type="checkbox"]');
+    
+    // Ensures the menu is hidden on page load.
+    menu.style.right = '-300px';
+
+    // Event listener for when the hamburger menu is clicked.
+    menuToggle.addEventListener('change', (event) => {
+        if(menuToggle.checked) {
+            menu.style.right = '0';
+        } else {
+            menu.style.right = '-300px';
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector('.menu');
+  const menuToggle = document.querySelector('.menu-toggle-label input[type="checkbox"]');
+  
+  // Ensures the menu is hidden on page load.
+  menu.style.right = '-300px';
+
+  // Event listener for when the hamburger menu is clicked.
+  menuToggle.addEventListener('change', () => {
+      if(menuToggle.checked) {
+          menu.style.right = '0';
+      } else {
+          menu.style.right = '-300px';
+      }
+  });
+});
+
