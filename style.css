@@ -195,10 +195,20 @@ body {
   transform: rotate(-45deg);
 }
 
-/* Adjustments */
 .menu-toggle-label input[type="checkbox"]:checked ~ .menu {
   right: 0; /* Visible when checkbox is checked */
   z-index: 1003; /* Higher than .menu-toggle-label when the menu is opened */
+}
+@media (max-width: 600px) {
+  /* On mobile, the menu is hidden initially */
+  .menu {
+    right: -300px; /* Hide the menu off the right side of the screen */
+  }
+  
+  /* On mobile, the menu is visible when the checkbox is checked */
+  .menu-toggle-label input[type="checkbox"]:checked ~ .menu {
+    right: 0; /* Show the menu */
+  }
 }
 
 .menu-toggle-label input[type="checkbox"]:checked ~ label {
