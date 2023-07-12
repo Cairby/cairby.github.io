@@ -1,0 +1,564 @@
+.site-name {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 60px;
+  color: #fff;
+  overflow:hidden;
+  transition: transform 0.5s;
+}
+
+.site-name a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.site-name a:hover {
+  text-decoration: none;
+ 
+}
+
+.site-name a:visited {
+  color: #fff;
+}
+
+
+
+
+
+
+body {
+  font-family: 'Abril Fatface', cursive;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  font-family: 'Montserrat', sans-serif;
+  cursor: none;
+}
+
+
+.hero h1,
+.hero p {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero.fade-in h1,
+.hero.fade-in p {
+  opacity: 1;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 2s ease forwards;
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* minimum height to occupy the full viewport height */
+  background-color: black;
+  overflow: hidden;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-text {
+  font-family: 'Bebas Neue', cursive;
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+  animation: floating 8s infinite ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  position: relative;
+}
+
+.hero-text h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 100px;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 30px;
+  font-family: 'Bebas Neue', cursive;
+}
+.menu-toggle-label {
+  position: absolute;
+  top: 0.5rem; 
+  right: 0.5rem; 
+  width: 3rem; 
+  height: 3rem; 
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1002; /* Lower than .menu when the menu is closed */
+}
+
+.menu-toggle-label input[type="checkbox"] {
+  display: none;
+}
+
+.menu-toggle-label span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;  /* initial color */
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.menu-toggle-label span::before,
+.menu-toggle-label span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;  /* initial color */
+  transition: all 0.2s ease;
+}
+
+.menu-toggle-label span::before {
+  top: -8px;
+}
+
+.menu-toggle-label span::after {
+  bottom: -8px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Hidden initially */
+  height: 100vh;
+  background-color: #fff;
+  z-index: 1001; /* Lower than .menu-toggle-label */
+  width: 300px;
+  transition: right .2s ease-out; 
+}
+
+.menu ul {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.menu ul li {
+  margin-bottom: 1rem;
+}
+
+.menu ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+
+
+/* Rotate to form an "X" */
+.menu-toggle-label input[type="checkbox"]:checked ~ label > span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-toggle-label input[type="checkbox"]:checked ~ label > span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+/* Adjustments */
+.menu-toggle-label input[type="checkbox"]:checked ~ .menu {
+  right: 0; /* Visible when checkbox is checked */
+  z-index: 1003; /* Higher than .menu-toggle-label when the menu is opened */
+}
+
+.menu-toggle-label input[type="checkbox"]:checked ~ label {
+  z-index: 1004; /* Place the menu above the slide-out menu when it is opened */
+}
+
+.menu-toggle-label input[type="checkbox"]:checked ~ label > span {
+  background: #000; 
+}
+
+
+/* animation classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%;
+  color: #fff;
+  font-size: 40px;
+}
+
+
+.about-page-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 100px; 
+  overflow: auto; 
+}
+
+.about-page-text h2 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 80px;
+}
+
+
+
+
+
+
+
+/*Contact Page*/
+.contact-section {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 50px;
+  position:absolute;
+  padding: 20px;
+  
+}
+
+
+
+.contact-section {
+  position: relative;
+}
+
+.contact-container {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+.contact-section {
+  position: relative;
+}
+
+.contact-image {
+  position: relative;
+  left: 50px; 
+  top: 50%; 
+  transform: translate(-50%, -50%) perspective(1000px) rotateX(0deg) rotateY(0deg);
+  width: 120px; 
+  height: auto;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+
+.contact-image img {
+  width: 100%; 
+  height: auto;
+}
+
+.contact-section:hover .contact-image {
+  transform: translate(-50%, -50%) perspective(1000px) rotateX(calc(-20deg + calc(40deg * var(--mouseY) / 100))) rotateY(calc(-30deg + calc(60deg * var(--mouseX) / 100)));
+}
+.contact-form {
+  margin-left: 220px; 
+}
+
+
+
+.contact-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+
+.footer-section {
+  background-color: black;;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-section p {
+  margin: 0;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+.projects-section {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out, scale 0.3s ease-in-out;
+}
+
+.project-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  transform: skewX(-20deg);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-item:hover .project-image {
+  transform: perspective(1000px) rotateX(calc(-15deg + calc(30deg * var(--mouseY) / 100))) rotateY(calc(-15deg + calc(30deg * var(--mouseX) / 100)));
+}
+
+.project-image::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 80%);
+  transform: translate(-50%, -50%) skewX(-20deg) scale(0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-image:hover::after {
+  opacity: 1;
+}
+
+#static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* Chrome, Edge, and Safari */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 20px;
+  border: 3px solid black;
+}
+
+/* Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: grey black;
+}
+
+.blob {
+  width: 600px; 
+  height: 600px; 
+  padding: 50px;
+ 
+}
+
+.about-img-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px;
+}
+
+#about {
+  position: relative;
+  background: pink;
+  
+  
+}
+a, button, input[type=submit], [onclick] {
+  cursor: none;
+}
+
+.dot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: turquoise;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 3px solid turquoise;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: top 0.3s ease-out, left 0.3s ease-out;
+  transform: translate(-50%, -50%);
+}
+
+.contact-button {
+  background-color: #2D2D2D;
+  color: white;
+  padding: 20px 40px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+
+.contact-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  background-color: pink;
+}
+
+.contact-button:hover a {
+  color: black;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 6s;  
+}
+
+.fade-in {
+  opacity: 1;
+}
