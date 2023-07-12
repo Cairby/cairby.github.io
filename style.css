@@ -562,3 +562,9 @@ a, button, input[type=submit], [onclick] {
 .fade-in {
   opacity: 1;
 }
+
+@media (max-width: 600px) {
+  .wave-container {
+    bottom: 0; /* or adjust this value as per your requirements */
+  }
+}

@@ -367,3 +367,13 @@ $(window).scroll(function() {
     // The element is not visible, do something else
   }
 });
+
+//for mobile
+if (window.matchMedia("(max-width: 600px)").matches) {
+  // The viewport is 600px or less
+  console.log('This is a mobile device');
+} else {
+  // The viewport is greater than 600px
+  console.log('This is not a mobile device');
+}
+
