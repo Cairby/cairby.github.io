@@ -199,3 +199,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutSection = document.querySelector('.about-page-text');
+  const underline = document.getElementById('underline');
+  
+  let options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+  };
+  
+  let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              underline.style.width = '50%';
+          } else {
+              underline.style.width = '0';
+          }
+      });
+  }, options);
+  
+  observer.observe(aboutSection);
+});
